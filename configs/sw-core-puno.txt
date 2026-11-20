@@ -1,0 +1,118 @@
+! SW-CORE-PUNO -- Puno - show running-config
+! Extraído del informe parcial (Grupo 6). Contraseñas y hashes reemplazados por <REMOVIDO>.
+service password-encryption
+hostname SW-CORE-PUNO
+enable secret 5 <REMOVIDO>
+username admin privilege 15 secret 5 <REMOVIDO>
+ip ssh version 2
+no ip domain-lookup
+ip domain-name miempresa.com
+vtp mode transparent
+spanning-tree mode pvst
+spanning-tree vlan 10,20,30,40,50,60,70,80,99 priority 4096
+!
+vlan 10
+  name VENTAS
+!
+vlan 20
+  name ADMINISTRACION
+!
+vlan 30
+  name FINANZAS
+!
+vlan 40
+  name WIFI_EJECUTIVOS
+!
+vlan 50
+  name MARKETING
+!
+vlan 60
+  name LOGISTICA
+!
+vlan 70
+  name WIFI_CLIENTES
+!
+vlan 80
+  name SERVIDORES
+!
+vlan 99
+  name NATIVA
+!
+interface FastEthernet0/1
+  description ENLACE_TRONCAL_PUNO
+  switchport trunk native vlan 99
+  switchport trunk allowed vlan 80,99
+  switchport trunk encapsulation dot1q
+  switchport mode trunk
+  switchport nonegotiate
+!
+interface FastEthernet0/2
+  description ENLACE_TRONCAL_PUNO
+  switchport trunk native vlan 99
+  switchport trunk allowed vlan 10,99
+  switchport trunk encapsulation dot1q
+  switchport mode trunk
+  switchport nonegotiate
+!
+interface FastEthernet0/3
+  description ENLACE_TRONCAL_PUNO
+  switchport trunk native vlan 99
+  switchport trunk allowed vlan 20,99
+  switchport trunk encapsulation dot1q
+  switchport mode trunk
+  switchport nonegotiate
+!
+interface FastEthernet0/4
+  description ENLACE_TRONCAL_PUNO
+  switchport trunk native vlan 99
+  switchport trunk allowed vlan 30,99
+  switchport trunk encapsulation dot1q
+  switchport mode trunk
+  switchport nonegotiate
+!
+interface FastEthernet0/5
+  description ENLACE_TRONCAL_PUNO
+  switchport trunk native vlan 99
+  switchport trunk allowed vlan 50,99
+  switchport trunk encapsulation dot1q
+  switchport mode trunk
+  switchport nonegotiate
+!
+interface FastEthernet0/6
+  description ENLACE_TRONCAL_PUNO
+  switchport trunk native vlan 99
+  switchport trunk allowed vlan 60,99
+  switchport trunk encapsulation dot1q
+  switchport mode trunk
+  switchport nonegotiate
+!
+interface FastEthernet0/7
+  description ENLACE_TRONCAL_PUNO
+  switchport trunk native vlan 99
+  switchport trunk allowed vlan 40,70,99
+  switchport trunk encapsulation dot1q
+  switchport mode trunk
+  switchport nonegotiate
+!
+interface GigabitEthernet0/1
+  description ENLACE_TRONCAL_PUNO
+  switchport trunk native vlan 99
+  switchport trunk allowed vlan 10,20,30,40,50,60,70,80,99
+  switchport trunk encapsulation dot1q
+  switchport mode trunk
+  switchport nonegotiate
+!
+interface Vlan99
+  ip address 172.16.56.193 255.255.255.240
+!
+ip default-gateway 172.16.56.206
+!
+line con 0
+  logging synchronous
+!
+line aux 0
+!
+line vty 0 4
+  login local
+  transport input ssh
+!

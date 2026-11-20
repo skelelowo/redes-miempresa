@@ -1,0 +1,64 @@
+! MLS-DISTR -- Ica - show running-config
+! Extraído del informe parcial (Grupo 6). Contraseñas y hashes reemplazados por <REMOVIDO>.
+no service password-encryption
+hostname MLS-DISTR
+enable secret 5 <REMOVIDO>
+ip routing
+spanning-tree mode pvst
+!
+interface GigabitEthernet1/0/1
+  switchport mode trunk
+!
+interface GigabitEthernet1/0/2
+  switchport mode trunk
+!
+interface GigabitEthernet1/0/3
+  switchport mode trunk
+!
+interface GigabitEthernet1/0/4
+  switchport mode trunk
+!
+interface GigabitEthernet1/0/5
+  switchport mode trunk
+!
+interface GigabitEthernet1/0/6
+  switchport mode trunk
+!
+interface GigabitEthernet1/0/7
+  switchport mode trunk
+!
+interface Vlan10
+  ip address 172.16.48.1 255.255.255.128
+!
+interface Vlan20
+  ip address 172.16.48.129 255.255.255.192
+!
+interface Vlan30
+  ip address 172.16.48.193 255.255.255.192
+!
+interface Vlan40
+  ip address 172.16.49.1 255.255.255.224
+!
+interface Vlan50
+  ip address 172.16.49.33 255.255.255.224
+!
+interface Vlan60
+  ip address 172.16.49.65 255.255.255.224
+!
+interface Vlan70
+  ip address 172.16.49.97 255.255.255.240
+!
+interface Vlan80
+  ip address 172.16.49.113 255.255.255.240
+!
+interface Vlan99
+  ip address 172.16.49.129 255.255.255.240
+  router rip
+!
+line con 0
+!
+line aux 0
+!
+line vty 0 4
+  login
+!

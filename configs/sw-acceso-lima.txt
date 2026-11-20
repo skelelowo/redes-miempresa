@@ -1,0 +1,27 @@
+! Switch2 -- Lima (acceso) - show running-config
+! Extraído del informe parcial (Grupo 6). Contraseñas y hashes reemplazados por <REMOVIDO>.
+no service password-encryption
+hostname Switch
+spanning-tree mode pvst
+!
+interface FastEthernet0/1
+  switchport access vlan 10
+!
+interface FastEthernet0/2
+  switchport access vlan 10
+!
+interface FastEthernet0/3
+  switchport access vlan 20
+!
+interface GigabitEthernet0/1
+  switchport trunk native vlan 99
+  switchport mode trunk
+!
+line con 0
+!
+line vty 0 4
+  login
+!
+line vty 5 15
+  login
+!

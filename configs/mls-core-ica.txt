@@ -1,0 +1,17 @@
+! MLS-CORE -- Ica - show running-config
+! Extraído del informe parcial (Grupo 6). Contraseñas y hashes reemplazados por <REMOVIDO>.
+service password-encryption
+hostname MLS-CORE
+enable secret 5 <REMOVIDO>
+spanning-tree mode pvst
+!
+interface GigabitEthernet1/0/2
+  switchport mode trunk
+!
+line con 0
+!
+line aux 0
+!
+line vty 0 4
+  login
+!

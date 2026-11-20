@@ -1,0 +1,63 @@
+! MLS-HUANUCO -- Huánuco - show running-config
+! Extraído del informe parcial (Grupo 6). Contraseñas y hashes reemplazados por <REMOVIDO>.
+no service password-encryption
+hostname MLS-HUANUCO
+enable secret 5 <REMOVIDO>
+ip routing
+spanning-tree mode pvst
+!
+interface GigabitEthernet1/0/1
+  switchport mode trunk
+!
+interface GigabitEthernet1/0/2
+  switchport mode trunk
+!
+interface GigabitEthernet1/0/3
+  switchport mode trunk
+!
+interface GigabitEthernet1/0/4
+  switchport mode trunk
+!
+interface GigabitEthernet1/0/5
+  switchport mode trunk
+!
+interface GigabitEthernet1/0/6
+  switchport mode trunk
+!
+interface GigabitEthernet1/0/7
+  switchport mode trunk
+!
+interface Vlan10
+  ip address 172.16.52.1 255.255.255.224
+!
+interface Vlan20
+  ip address 172.16.52.33 255.255.255.224
+!
+interface Vlan30
+  ip address 172.16.52.65 255.255.255.224
+!
+interface Vlan40
+  ip address 172.16.52.97 255.255.255.224
+!
+interface Vlan50
+  ip address 172.16.52.129 255.255.255.240
+!
+interface Vlan60
+  ip address 172.16.52.145 255.255.255.240
+!
+interface Vlan70
+  ip address 172.16.52.161 255.255.255.240
+!
+interface Vlan80
+  ip address 172.16.52.177 255.255.255.240
+!
+interface Vlan99
+  ip address 172.16.52.193 255.255.255.240
+!
+line con 0
+!
+line aux 0
+!
+line vty 0 4
+  login
+!
