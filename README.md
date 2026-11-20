@@ -46,7 +46,7 @@ redes-miempresa/
 
 ## Mi aporte
 
-> **[COMPLETAR]** Escribe aquí 2 o 3 líneas con lo que hiciste tú (por ejemplo: qué sedes configuraste, quién hizo el direccionamiento, qué probaste).
+Participé en el diseño y la implementación de la red en Cisco Packet Tracer: creé las VLAN y el enrutamiento InterVLAN, conecté y configuré los switches, routers y servidores de cada sede, y trabajé el direccionamiento FLSM y VLSM. También aporté en la comparación de proveedores cloud para el backup y en la redacción del informe.
 
 ## Pendiente para la versión final
 
